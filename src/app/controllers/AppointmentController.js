@@ -149,8 +149,6 @@ class AppointmentController {
 
     await appointment.save();
 
-    console.log(`Appointment: ${JSON.stringify(appointment)}`);
-
     await Mail.sendMail({
       to: `${appointment.provider.name} <${appointment.provider.email}>`,
       subject: 'Agendamento cancelado',
